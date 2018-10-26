@@ -37,6 +37,14 @@ git checkout (nameofthebranch)
 git merge 
 
 
+///////branches
+git checkout -b name //crea 
+git checkout branch_name //cambias de branch
+git push origin branch_name
+git remote -v 
+git branch //branches existentes
+
+
 ////copiar repositorio sin folder
 git init
 git remote add origin git@github.com:me/name.git
