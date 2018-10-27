@@ -1,7 +1,7 @@
 <?php
 
 class ClienteVista {
-    //private $keys;
+    
     private $view;
     
     public function __construct() {        

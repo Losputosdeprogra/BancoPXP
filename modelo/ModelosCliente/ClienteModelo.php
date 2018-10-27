@@ -12,9 +12,9 @@ class ClienteModelo extends UsuarioModelo{
     public function getDireccion(){
         return $this->direccion;
     }
-
+    
     public function verificarUsuario($nombre,$contra) {
-    $sql = "SELECT nombre,contrasena FROM clientes;";
-    return parent::verificar($nombre, $contra,$sql);
+    $cliente = 'cliente';
+    return parent::verificar($nombre, $contra,$cliente);
     }
 }

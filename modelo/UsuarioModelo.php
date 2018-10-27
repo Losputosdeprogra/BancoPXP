@@ -53,8 +53,8 @@ class UsuarioModelo {
     }
 
 
-    public function verificar($nombre,$contra,$sql) {
-        
+    public function verificar($nombre,$contra,$baseDeDatos) {
+        $sql = "SELECT nombre,contrasena FROM $baseDeDatos;";
         $conexion =  Conectar::conectarBD();
         $rows = $conexion->query($sql);
         $conexion->close();
