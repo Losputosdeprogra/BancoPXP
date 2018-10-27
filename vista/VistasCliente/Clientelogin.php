@@ -26,7 +26,7 @@
 
     <center><h1>Gestion de Cliente</h1></center>
 
-    <form method="POST" action="controlador/ControladoresCliente/ClienteControlador.php" >
+    <form method="POST" action="../controlador/ControladoresCliente/ClienteLoginControlador.php" >
     
     <div class="form-group">
         <label for="email">Nombre: </label>

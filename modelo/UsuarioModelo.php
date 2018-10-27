@@ -13,6 +13,8 @@ class UsuarioModelo {
     private $telefono;
     private $email;
     private $contrasena;
+    
+    private $BaseDeDatosCorrespondiente = "bd_usuario";
 
     public function __construct($nom="",$tel="",$em="",$cont="") {
         $this->id_cliente    = 0;
@@ -53,9 +55,9 @@ class UsuarioModelo {
     }
 
 
-    public function verificar($nombre,$contra,$baseDeDatos) {
-        $sql = "SELECT nombre,contrasena FROM $baseDeDatos;";
-        $conexion =  Conectar::conectarBD();
+    public function verificar($nombre,$contra,$TablaCorrespondiente) {
+        $sql = "SELECT nombre,contrasena FROM $TablaCorrespondiente ;";
+        $conexion =  Conectar::conectarBD($this->BaseDeDatosCorrespondiente);
         $rows = $conexion->query($sql);
         $conexion->close();
         

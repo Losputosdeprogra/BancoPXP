@@ -1,8 +1,12 @@
 <?php
+require_once __DIR__ . '/../UsuarioModelo.php';
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+class CajeroModelo extends UsuarioModelo{
 
+   
+    private $TablaCorrespondeinte = "cajeros";
+    
+    public function verificarUsuario($nombre,$contra) {                         // Esta funcion revisa si el usuario existe en la tabla
+        return parent::verificar($nombre,$contra, $this->TablaCorrespondeinte); //y sabe su contraseña.
+    }                                                                           //Utiliza la vatiable TablaCorrespondiente para realizar
+}                                                                               //la consulta en la tabla correcta.

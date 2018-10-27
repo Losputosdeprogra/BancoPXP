@@ -24,24 +24,20 @@
 
 <div class="col-md-4">
 
-    <center><h1>Interfaz de Cliente(solo puede hacer extractos)</h1></center>
+    <center><h1>Realizar un extracto</h1></center>
 
-    <form method="POST" action="../../controlador/ControladoresCliente/ClienteInterfazControlador.php" >
+    <form method="POST" action="controlador/ControladoresCliente/ClienteInterfazControlador.php" >
     
     <div class="form-group">
-        <label for="email">Nombre: </label>
+        <label for="email">Intervalo de fechas </label>
         <input type="text" name="nombre" class="form-control" id="nombre">
     </div>    
 
-    <div class="form-group">
-        <label for="edad">Contraseña: </label>
-        <input type="text" name="contrasena" class="form-control" id="contrasena">
-    </div>  
 
         
     <center>
 
-      <input type="submit" value="Ingresar" class="btn btn-primary" name="btn_ingresar">
+      <input type="submit" value="Soliciatr extraxto" class="btn btn-primary" name="btn_Solicitar_extracto">
       
     </center>
 

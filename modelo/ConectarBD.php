@@ -3,9 +3,9 @@
 
 class Conectar {
 
-    public static function conectarBD() {
+    public static function conectarBD($BaseDeDatos) {
         $host = "localhost"; //define el servidor
-        $basededatos = "prueva1";   //define el nombre de la base de datbos
+        $basededatos = "$BaseDeDatos";   //define el nombre de la base de datbos
         $usuariodb = "root";    //nombre del usuario autorizado para la BD
         $clavedb = "";  //password del usuario
         try {   //bloque de proteccion de fallos mediante intentos
