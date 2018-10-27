@@ -1,3 +1,5 @@
+https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow
+
 git cd ir a directorio
 ///inicializar un archivo como git
 git init
@@ -35,6 +37,30 @@ git checkout (nameofthebranch)
 
 ///merge branches
 git merge 
+
+///reset
+git reset --hard origin/Branch_name
+
+///branches
+git checkout -b name  /create a branch
+git checkout branch_name //cambia de branch
+git push -u origin branch_name
+git remote -v
+git branch //branch existentes
+
+
+//merging obteniendo master y branch
+git checkout master
+git pull
+git pull origin branch_name
+git push
+
+///////branches
+git checkout -b name //crea 
+git checkout branch_name //cambias de branch
+git push origin branch_name
+git remote -v 
+git branch //branches existentes
 
 
 ////copiar repositorio sin folder
