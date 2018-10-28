@@ -13,11 +13,11 @@ $contrasena  = $_POST['contrasena'];
 
 if (isset($_POST['btn_ingresar'])) {
     
-    //if($ObjCli->verificarUsuario($nombre, $contrasena)){
-        //
-        //require_once __DIR__ . '../../vista/VistasCliente/ClienteInterfazform.php';
-    //}else{
+    if($ObjCli->verificarUsuario($nombre, $contrasena)){
+        
+      //require_once __DIR__ . '../../vista/VistasCajero/.php';
+    }else{
         echo "<br>Usuario o contrasena incorrecto";
-    //}
+    }
 }
 

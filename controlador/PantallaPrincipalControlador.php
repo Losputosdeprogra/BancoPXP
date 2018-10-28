@@ -6,7 +6,7 @@ if (isset($_POST['btn_cliente'])) {
 }
 
 if (isset($_POST['btn_cajero'])) {
-    //echo "<br>Esta parte aun no esta implementada lo sentimos";
+    echo "<br>Esta parte aun no esta implementada lo sentimos";
        require_once __DIR__ . '/../vista/VistasCajero/CajeroLogin.php'; 
 }
 

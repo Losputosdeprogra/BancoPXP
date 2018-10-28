@@ -26,7 +26,7 @@
 
     <center><h1>Registrate como cajero</h1></center>
 
-    <form method="POST" action="controlador/ControladoresCajero/CajeroLoginControlador.php" >
+    <form method="POST" action="..\controlador\ControladoresCajero/CajeroLoginControlador.php" >
     
     <div class="form-group">
         <label for="email">Nombre: </label>
