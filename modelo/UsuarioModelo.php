@@ -53,17 +53,59 @@ class UsuarioModelo {
     }
 
 
-    public function verificar($nombre,$contra,$baseDeDatos) {
-        $sql = "SELECT nombre,contrasena FROM $baseDeDatos;";
-        $conexion =  Conectar::conectarBD();
+
+    public function verificar($TablaCorrespondiente) {
+        $sql = "SELECT nombre,contrasena FROM $TablaCorrespondiente;";
+        $conexion =  Conectar::conectarBD($this->BaseDeDatosCorrespondiente);
+
         $rows = $conexion->query($sql);
         $conexion->close();
         
         while ( $fila = $rows->fetch_row()){
-            if ($fila[0] == $nombre && $fila[1] == $contra){
+            if ($fila[0] == $this->nombre && $fila[1] == $this->contrasena){
                 return TRUE;
             }
         }
         return FALSE;
+    }
+    public function RealizarExtracto() {
+    $nombreDelCliente = (string)$this->nombre;
+    echo $nombreDelCliente;
+    $sql1 = "SELECT cuentas.id_cuenta FROM cuentas,bd_usuario.clientes c WHERE c.nombre = '$nombreDelCliente' AND cuentas.id_cuenta = c.id_cliente";
+    $conexion1 =  Conectar::conectarBD("bd_finanzas");
+    $CuentaDelCliente = $conexion1->query($sql1);
+    $conexion1->close();
+
+    $CuentaDelCliente = $CuentaDelCliente->fetch_row();
+    $CuentaDelCliente= (string)$CuentaDelCliente[0];
+
+    $sql = "SELECT fecha,hora,tipo,cuenta_origen,cuenta_destino,monto FROM transacciones WHERE cuenta_origen = $CuentaDelCliente OR cuenta_destino = $CuentaDelCliente";
+    $conexion =  Conectar::conectarBD("bd_finanzas");
+    $rows = $conexion->query($sql);
+    $conexion->close();
+    return $rows;
+}
+    
+    public function SeleccionarUsuarioEnBaseDeDatos() {
+        $sql = "UPDATE `clientes` SET `selected` = b'1' WHERE clientes.nombre = '$this->nombre';";
+        $conexion =  Conectar::conectarBD("bd_usuario");
+        $conexion->query($sql);
+        $conexion->close();
+    }
+    public function DesSeleccionarUsuarioEnBaseDeDatos() {
+        $sql = "UPDATE `clientes` SET `selected` = b'0' WHERE clientes.nombre = '$this->nombre';";
+        $conexion =  Conectar::conectarBD("bd_finanzas");
+        $conexion->query($sql);
+        $conexion->close();
+    }
+    public function ObtenerUsuarioSeleccionado() {
+        $sql = "SELECT nombre FROM clientes WHERE selected = '1';";
+        $conexion =  Conectar::conectarBD("bd_finanzas");
+        $nombre=$conexion->query($sql);
+        $conexion->close();
+        
+        $nombre= $nombre[0];
+        
+        return $nombre;
     }
 }
