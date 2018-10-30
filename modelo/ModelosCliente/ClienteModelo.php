@@ -14,7 +14,11 @@ class ClienteModelo extends UsuarioModelo{
         return $this->direccion;
     }
     
-    public function verificarUsuario($nombre,$contra) {                              // Esta funcion revisa si el usuario existe en la tabla
-        return parent::verificar($nombre,$contra, $this->TablaCorrespondiente);      //y sabe su contraseña.
-    }                                                                                //Utiliza la vatiable TablaCorrespondiente para realizar
-}                                                                                    //la consulta en la tabla correcta.
+    public function verificarUsuario() {                          // Esta funcion revisa si el usuario existe en la tabla
+        return parent::verificar($this->TablaCorrespondiente);    //y sabe su contraseña.
+    }                                                             //Utiliza la vatiable TablaCorrespondiente para realizar
+                                                                  //la consulta en la tabla correcta.
+    public function RealizarExtractoByCliente() {
+        parent::RealizarExtracto(parent::getNombre());
+    }
+}                                                                                    
