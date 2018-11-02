@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/ConectarBD.php';
+require_once __DIR__ . '/../ConectarBD.php';
 
 class UsuarioModelo {
     

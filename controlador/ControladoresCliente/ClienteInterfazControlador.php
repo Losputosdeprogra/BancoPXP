@@ -1,18 +1,31 @@
 <?php
  echo "<html lang='es'>" ;
+ require_once __DIR__ . '/../../modelo/UsuariosModelo/ClienteModelo.php';
+ session_start();       
 
 $FechaInicio      = $_POST['FechaInicio'];
 $FechaFinal       = $_POST['FechaFinal'];
 
- 
-require_once __DIR__ . '/../../modelo/ModelosCliente/ClienteModelo.php';
-
 $Cliente = new ClienteModelo;
-$Cliente->setNombre($Cliente->ObtenerUsuarioSeleccionado());
+$Cliente->setNombre($_SESSION["nombre"]);      //Se recive el nombre del usuario que se logueo en la pagina anterior
 
 
 if (isset($_POST['btn_Solicitar_extracto'])) {
-    $Extracto=$Cliente->RealizarExtracto();
+    
+    if($FechaFinal != "" && $FechaInicio != ""){
+    
+        $Extracto = $Cliente->RealizarExtracto($FechaInicio,$FechaFinal);
+        MostrarExtracto($Extracto);
+        
+    }else{
+        echo "<br><br><br><br>";
+        echo "<center>Dede introducir ambas fechas</center>";
+    }
+}
+
+if (isset($_POST['btn_Solicitar_extracto_general'])){
+    
+    $Extracto = $Cliente->RealizarExtractoGeneral($FechaInicio,$FechaFinal);
     MostrarExtracto($Extracto);
 }
 

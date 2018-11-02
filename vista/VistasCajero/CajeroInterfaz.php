@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>BancoPX</title>
+        <title>BancoPX<</title>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"  crossorigin="anonymous">
 
@@ -23,14 +23,13 @@
             <!-- INICIA LA COLUMNA -->
 
             <div class="col-md-4">
-
                 <center><h1>Realizar un extracto</h1></center>
                 
                 <?php 
                     print "<h2><br><br><br><p>Bienvenido $_SESSION[nombre]</h2>";
                 ?>
 
-                <form method="POST" action="../../controlador/ControladoresCliente/ClienteInterfazControlador.php" >
+                <form method="POST" action="../../controlador/ControladoresCliente/CajeroInterfazControlador.php" >
 
                     <div class="form-group">
                         <label for="FechaInicio">Fecha de inicio </label>

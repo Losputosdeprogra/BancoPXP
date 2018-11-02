@@ -3,13 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/BancoPX/controlador/ControladoresCliente/ClienteLoginControlador.php</file>
-            <file>file:/C:/xampp/htdocs/BancoPX/controlador/ControladoresCliente/ClienteInterfazControlador.php</file>
-            <file>file:/C:/xampp/htdocs/BancoPX/modelo/ModelosCliente/ClienteModelo.php</file>
-            <file>file:/C:/xampp/htdocs/BancoPX/vista/VistasCliente/ClienteInterfaz.php</file>
-            <file>file:/C:/xampp/htdocs/BancoPX/modelo/ModelosCajero/CajeroModelo.php</file>
-            <file>file:/C:/xampp/htdocs/BancoPX/vista/MainnVista.php</file>
-            <file>file:/C:/xampp/htdocs/BancoPX/modelo/UsuarioModelo.php</file>
+            <file>file:/C:/xampp/htdocs/BancoPX/modelo/BancoModelo/CajaModelo.php</file>
+            <file>file:/C:/xampp/htdocs/BancoPX/modelo/UsuariosModelo/UsuarioModelo.php</file>
+            <file>file:/C:/xampp/htdocs/BancoPX/modelo/UsuariosModelo/ClienteModelo.php</file>
+            <file>file:/C:/xampp/htdocs/BancoPX/controlador/ControladoresCajero/CajeroLoginControlador.php</file>
+            <file>file:/C:/xampp/htdocs/BancoPX/modelo/FinanzasModelo/TransaccionModelo.php</file>
+            <file>file:/C:/xampp/htdocs/BancoPX/modelo/BancoModelo/SucursalModelo.php</file>
+            <file>file:/C:/xampp/htdocs/BancoPX/modelo/FinanzasModelo/CuentaModelo.php</file>
+            <file>file:/C:/xampp/htdocs/BancoPX/modelo/BancoModelo/DepartamentoModelo.php</file>
         </group>
     </open-files>
 </project-private>

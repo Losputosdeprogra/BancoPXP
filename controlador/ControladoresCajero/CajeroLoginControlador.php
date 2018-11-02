@@ -1,21 +1,23 @@
 <?php
 
- echo "<html lang='es'>" ;
- echo '<br>LLEgaste hasta aqui';
+echo "<html lang='es'>" ;
+require_once __DIR__ . '/../../modelo/UsuariosModelo/CajeroModelo.php';
+session_start();   
 
 $nombre      = $_POST['nombre'];
 $contrasena  = $_POST['contrasena'];
 
- 
-//require_once __DIR__ . '../../modelo/ModelosCliente/ClienteModelo.php';
+$_SESSION["nombre"]=$nombre;
 
-//$ObjCli = new ClienteModelo();
+$Cajero = new CajeroModelo();
+$Cajero->setNombre($nombre);
+$Cajero->setContrasena($contrasena);
 
 if (isset($_POST['btn_ingresar'])) {
     
-    if($ObjCli->verificarUsuario($nombre, $contrasena)){
+    if($Cajero->verificarUsuario()){
         
-      //require_once __DIR__ . '../../vista/VistasCajero/.php';
+      require_once __DIR__ . '/../../vista/VistasCajero/CajeroInterfaz.php';
     }else{
         echo "<br>Usuario o contrasena incorrecto";
     }

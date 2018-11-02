@@ -3,7 +3,7 @@
 <html>
 <head>
        <meta charset="UTF-8">
-  <title>Mi microERP</title>
+  <title>BancoPX<</title>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"  crossorigin="anonymous">
 
@@ -26,15 +26,15 @@
 
     <center><h1>Registrate como cajero</h1></center>
 
-    <form method="POST" action="..\controlador\ControladoresCajero/CajeroLoginControlador.php" >
+    <form method="POST" action="../controlador/ControladoresCajero/CajeroLoginControlador.php" >
     
     <div class="form-group">
-        <label for="email">Nombre: </label>
+        <label for="nombre">Nombre: </label>
         <input type="text" name="nombre" class="form-control" id="nombre">
     </div>    
 
     <div class="form-group">
-        <label for="edad">Contraseña: </label>
+        <label for="contrasena">Contraseña: </label>
         <input type="text" name="contrasena" class="form-control" id="contrasena">
     </div>  
 
