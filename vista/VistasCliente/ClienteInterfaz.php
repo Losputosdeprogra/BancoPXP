@@ -24,32 +24,25 @@
 
             <div class="col-md-4">
 
-                <center><h1>Realizar un extracto</h1></center>
+                <center><h1>Interfaz de cliente</h1></center>
                 
                 <?php 
                     print "<h2><br><br><br><p>Bienvenido $_SESSION[nombre]</h2>";
+                    print "<br><p>¿Qué deceas hacer?<p>"
                 ?>
 
                 <form method="POST" action="../../controlador/ControladoresCliente/ClienteInterfazControlador.php" >
 
-                    <div class="form-group">
-                        <label for="FechaInicio">Fecha de inicio </label>
-                        <input type="date" name="FechaInicio" class="form-control" id="fechaInicio" placeholder="dd/mm/yyy">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="FechaFinal">Fecha final </label>
-                        <input type="date" name="FechaFinal" class="form-control" id="fechaFinal" placeholder="dd/mm/yyy">
-                    </div>    
+                        
 
                     <center>
 
                       <input type="submit" value="Solicitar extracto" class="btn btn-primary" name="btn_Solicitar_extracto">
-                      <input type="submit" value="Solicitar extracto general" class="btn btn-danger" name="btn_Solicitar_extracto_general">
+                      <input type="submit" value="Ver estado de mis cuentas" class="btn btn-danger" name="btn_Ver_cuentas">
                       
                     </center>
 
-                </form>
+                </form >
             </div>
             <!-- TERMINA LA COLUMNA -->
             <div class="col-md-4"></div>

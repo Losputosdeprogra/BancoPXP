@@ -18,10 +18,17 @@ class ClienteModelo extends UsuarioModelo{
         return parent::verificar($this->TablaCorrespondiente);    //y sabe su contraseña.
     }                                                             //Utiliza la vatiable TablaCorrespondiente para realizar
                                                                   //la consulta en la tabla correcta.
-    public function RealizarExtracto($fi,$ff) {
-        return parent::Extracto(parent::getNombre(),$fi,$ff);
+    public function RealizarExtracto($fi,$ff,$id) {
+        return parent::Extracto($fi,$ff,$id);
     }
-    public function RealizarExtractoGeneral() {
-        return parent::Extracto(parent::getNombre(),"0-0-0","3000-0-0");
+    public function RealizarExtractoGeneral($id) {
+        return parent::Extracto("0-0-0","3000-0-0",$id);
+    }
+    public function ObtenerCuentas() {
+        $id_cliente = $this->getIdCliente();
+        $sql ="SELECT * from cuentas WHERE id_cliente = $id_cliente;";
+        $cuentas = ConectarBD::send("bd_finanzas", $sql);
+        
+        return $cuentas;
     }
 }                                                                                    

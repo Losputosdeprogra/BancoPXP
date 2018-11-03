@@ -1,53 +1,42 @@
 <?php
- echo "<html lang='es'>" ;
- require_once __DIR__ . '/../../modelo/UsuariosModelo/ClienteModelo.php';
- session_start();       
-
-$FechaInicio      = $_POST['FechaInicio'];
-$FechaFinal       = $_POST['FechaFinal'];
-
-$Cliente = new ClienteModelo;
-$Cliente->setNombre($_SESSION["nombre"]);      //Se recive el nombre del usuario que se logueo en la pagina anterior
+    echo "<html lang='es'>" ;
+    require_once __DIR__ . '/../../modelo/UsuariosModelo/ClienteModelo.php';
+    session_start();       
 
 
-if (isset($_POST['btn_Solicitar_extracto'])) {
+    $Cliente = new ClienteModelo;
+    $nombre = $_SESSION["nombre"];
+
+    $sql = "SELECT id_cliente from clientes WHERE nombre = '$nombre'";
+    $Cliente->setIdCliente(ConectarBD::send("bd_usuario", $sql)->fetch_row()[0]);
     
-    if($FechaFinal != "" && $FechaInicio != ""){
-    
-        $Extracto = $Cliente->RealizarExtracto($FechaInicio,$FechaFinal);
-        MostrarExtracto($Extracto);
-        
-    }else{
-        echo "<br><br><br><br>";
-        echo "<center>Dede introducir ambas fechas</center>";
+
+    if (isset($_POST['btn_Solicitar_extracto'])) {
+
+       require_once __DIR__ . '/../../vista/VistasCliente/ClienteRealizarExtracto.php';
     }
-}
 
-if (isset($_POST['btn_Solicitar_extracto_general'])){
-    
-    $Extracto = $Cliente->RealizarExtractoGeneral($FechaInicio,$FechaFinal);
-    MostrarExtracto($Extracto);
-}
+    if (isset($_POST['btn_Ver_cuentas'])){
 
-function MostrarExtracto($Transacciones="") {
+       $cuentas = $Cliente->ObtenerCuentas();
+       MostrarCuentas($cuentas);
+    }
+
+    function MostrarCuentas($cuentas="") {
     echo "<table width='75%' border='5' align='center' cellspacing='5' bordercolor='#000000' bgcolor='#FFCC99'>";
-    echo "<caption><h1>Lista de transacciones</caption>";
+    echo "<caption><h1>Lista de tus cuentas</caption>";
     echo "<tr>";
-    echo "<th>Fecha</th>";
-    echo "<th>Hora</th>";
-    echo "<th>Tipo</th>";
-    echo "<th>Cuenta origen</th>";
-    echo "<th>Cuenta destino</th>";
+    echo "<th>Id_cuentas</th>";
     echo "<th>Monto</th>";
+    echo "<th>Tipo</th>";
+    echo "<th>Moneda</th>";
     echo "</tr>";
-    while ($fila = $Transacciones->fetch_row()) {
+    while ($fila = $cuentas->fetch_row()) {
         echo "<tr>";
         echo "<td> <center>".$fila[0]."</center></td>"; 
         echo "<td> <center>".$fila[1]."</td>";
         echo "<td> <center>".$fila[2]."</td>";
         echo "<td> <center>".$fila[3]."</td>";
-        echo "<td> <center>".$fila[4]."</td>";
-        echo "<td> <center>".$fila[5]."</td>";
         echo "</tr>";
     }
     echo " </table>";

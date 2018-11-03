@@ -19,7 +19,7 @@ class UsuarioModelo {
         $this->contrasena   = $cont;
     }       
     public function setIdCliente($idCli) {
-        $this->idCliente = $idCli;
+        $this->id_cliente = $idCli;
     }
     public function getIdCliente() {
         return $this->id_cliente;
@@ -61,15 +61,10 @@ class UsuarioModelo {
         return FALSE;
     }
     
-    protected function Extracto($nombreDelCliente,$fi,$ff) {
+    protected function Extracto($fi,$ff,$idCuenta) {
         
-        $sql1 = "SELECT cuentas.id_cuenta FROM cuentas,bd_usuario.clientes c "
-                . "WHERE c.nombre = '$nombreDelCliente' AND cuentas.id_cuenta = c.id_cliente";
-        
-        $CuentaDelCliente = ConectarBD::send("bd_finanzas",$sql1)->fetch_row()[0];
-        
-        $sql2 = "SELECT fecha,hora,tipo,cuenta_origen,cuenta_destino,monto FROM transacciones "
-                . "WHERE (cuenta_origen = $CuentaDelCliente OR cuenta_destino = $CuentaDelCliente) AND (fecha >='$fi' AND fecha<='$ff');";
-        return ConectarBD::send("bd_finanzas",$sql2);
+        $sql = "SELECT fecha,hora,tipo,cuenta_origen,cuenta_destino,monto FROM transacciones "
+                . "WHERE (cuenta_origen = $idCuenta OR cuenta_destino = $idCuenta) AND (fecha >='$fi' AND fecha<='$ff');";
+        return ConectarBD::send("bd_finanzas",$sql);
     }
 }
