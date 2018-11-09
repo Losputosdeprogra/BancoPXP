@@ -23,31 +23,23 @@
             <!-- INICIA LA COLUMNA -->
 
             <div class="col-md-4">
-                <center><h1>Realizar un extracto</h1></center>
+                <center><h1>Interfaz de cajero</h1></center>
                 
                 <?php 
-                    print "<h2><br><br><br><p>Bienvenido $_SESSION[nombre]</h2>";
+                    print "<h2><br><br><br><p>Bienvenido $_SESSION[nombre]</h2><br>";
                 ?>
 
-                <form method="POST" action="../../controlador/ControladoresCliente/CajeroInterfazControlador.php" >
+                <form method="POST" action="../../controlador/ControladoresCajero/CajeroInterfazControlador.php" >
 
-                    <div class="form-group">
-                        <label for="FechaInicio">Fecha de inicio </label>
-                        <input type="date" name="FechaInicio" class="form-control" id="fechaInicio" placeholder="dd/mm/yyy">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="FechaFinal">Fecha final </label>
-                        <input type="date" name="FechaFinal" class="form-control" id="fechaFinal" placeholder="dd/mm/yyy">
-                    </div>    
-
-                    <center>
-
-                      <input type="submit" value="Solicitar extracto" class="btn btn-primary" name="btn_Solicitar_extracto">
-                      <input type="submit" value="Solicitar extracto general" class="btn btn-danger" name="btn_Solicitar_extracto_general">
-                      
-                    </center>
-
+                    <fieldset>
+                        <legend>¿Qué deceas hacer?</legend>
+                        <center>
+                            <input type="submit" value="Realizar extracto" class="btn btn-primary" name="btn_Realizar_extracto"></br></br>
+                            <input type="submit" value="Realizar transaccion" class="btn btn-success" name="btn_Realizar_transaccion"></br></br>
+                            <input type="submit" value="Crear cuenta nueva" class="btn btn-danger" name="btn_Crear_cuenta"></br></br>
+                            <input type="submit" value="Registrar nuevo cliente" class="btn btn-info" name="btn_Registrar_cliente">
+                        </center>
+                    </fieldset>
                 </form>
             </div>
             <!-- TERMINA LA COLUMNA -->

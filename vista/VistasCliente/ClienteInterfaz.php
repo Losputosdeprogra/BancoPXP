@@ -28,19 +28,20 @@
                 
                 <?php 
                     print "<h2><br><br><br><p>Bienvenido $_SESSION[nombre]</h2>";
-                    print "<br><p>¿Qué deceas hacer?<p>"
                 ?>
 
                 <form method="POST" action="../../controlador/ControladoresCliente/ClienteInterfazControlador.php" >
 
                         
+                    <fieldset>
+                        <legend>¿Qué deceas hacer?</legend>
+                        <center>
 
-                    <center>
+                          <input type="submit" value="Solicitar extracto" class="btn btn-primary" name="btn_Solicitar_extracto">
+                          <input type="submit" value="Ver estado de mis cuentas" class="btn btn-danger" name="btn_Ver_cuentas">
 
-                      <input type="submit" value="Solicitar extracto" class="btn btn-primary" name="btn_Solicitar_extracto">
-                      <input type="submit" value="Ver estado de mis cuentas" class="btn btn-danger" name="btn_Ver_cuentas">
-                      
-                    </center>
+                        </center>
+                    </fieldset>
 
                 </form >
             </div>
