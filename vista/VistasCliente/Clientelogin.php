@@ -22,7 +22,7 @@
         <!-- INICIA LA COLUMNA -->
 
             <div class="col-md-4">
-
+                
                 <br><br><br><br>
                 <center><h1>Registrate como cliente</h1></center>
 
@@ -35,14 +35,12 @@
 
                     <div class="form-group">
                         <label for="edad">Contraseña: </label>
-                        <input type="text" name="contrasena" class="form-control" id="contrasena">
+                        <input type="password" name="contrasena" class="form-control" id="contrasena">
                     </div>  
-
 
                     <center>
                         <input type="submit" value="Ingresar" class="btn btn-primary" name="btn_ingresar">
                     </center>
-
               </form>
             </div>
             <div class="col-md-4"></div>

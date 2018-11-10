@@ -2,7 +2,7 @@
     echo "<html lang='es'>" ;
     require_once __DIR__ . '/../../modelo/UsuariosModelo/ClienteModelo.php';
     session_start();       
-
+    
 
     $Cliente = new ClienteModelo;
     $nombre = $_SESSION["nombre"];

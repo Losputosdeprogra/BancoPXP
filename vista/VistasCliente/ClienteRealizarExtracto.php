@@ -54,12 +54,12 @@
                     
                     <div class="form-group">
                         <label for="FechaInicio">Fecha de inicio </label>
-                        <input type="datetime-local" name="FechaInicio" class="form-control" id="fechaInicio" placeholder="dd/mm/yyy">
+                        <input type="date" name="FechaInicio" class="form-control" id="fechaInicio" placeholder="dd/mm/yyy">
                     </div>
 
                     <div class="form-group">
                         <label for="FechaFinal">Fecha final </label>
-                        <input type="datetime-local" name="FechaFinal" class="form-control" id="fechaFinal" placeholder="dd/mm/yyy">
+                        <input type="date" name="FechaFinal" class="form-control" id="fechaFinal" placeholder="dd/mm/yyy">
                     </div>  
 
                     <center>
@@ -74,6 +74,5 @@
             <!-- TERMINA LA COLUMNA -->
             <div class="col-md-4"></div>
         </div>
-        
     </body>
 </html>
